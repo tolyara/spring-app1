@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder
+		location="classpath:musicPlayer.properties" />
+
+	<bean id="testBean" class="ru.alishev.springcourse.TestBean">
+		<constructor-arg value="Anatolii" />
+	</bean>
+	<bean id="testBean2" class="ru.alishev.springcourse.TestBean">
+		<constructor-arg value="Anatolii2" />
+	</bean>
+
+	<bean id="musicBean"
+		class="ru.alishev.springcourse.ClassicalMusic" scope="singleton">
+	</bean>
+	<bean id="musicBean2" class="ru.alishev.springcourse.RockMusic">
+	</bean>
+	<bean id="musicBean3" class="ru.alishev.springcourse.JazzMusic">
+	</bean>
+	<bean id="musicBean4"
+		class="ru.alishev.springcourse.ClassicalMusic" init-method="doMyInit"
+		destroy-method="doMyDestroy">
+	</bean>
+	<bean id="musicBean5" class="ru.alishev.springcourse.JazzMusic"
+		init-method="doMyInit" destroy-method="doMyDestroy" scope="prototype">
+	</bean>
+	<bean id="musicBean6" class="ru.alishev.springcourse.RockMusic"
+		factory-method="getRockMusic" scope="prototype">
+	</bean>
+
+	<bean id="musicPlayer" class="ru.alishev.springcourse.MusicPlayer">
+		<constructor-arg ref="musicBean" />
+	</bean>
+	<bean id="musicPlayer2"
+		class="ru.alishev.springcourse.MusicPlayer">
+		<constructor-arg ref="musicBean2" />
+	</bean>
+
+	<bean id="musicPlayer3"
+		class="ru.alishev.springcourse.MusicPlayer">
+		<property name="music" ref="musicBean" />
+		<property name="name" value="Classic" />
+		<property name="volume" value="50" />
+	</bean>
+	<bean id="musicPlayer4"
+		class="ru.alishev.springcourse.MusicPlayer">
+		<property name="music" ref="musicBean2" />
+		<property name="name" value="${musicPlayer.name}" />
+		<property name="volume" value="${musicPlayer.volume}" />
+	</bean>
+	<bean id="musicPlayer5"
+		class="ru.alishev.springcourse.MultigenreMusicPlayer">
+		<property name="musicList">
+			<list>
+				<ref bean="musicBean" />
+				<ref bean="musicBean2" />
+				<ref bean="musicBean3" />
+			</list>
+		</property>
+		<property name="name" value="${multigenreMusicPlayer.name}" />
+		<property name="volume"
+			value="${multigenreMusicPlayer.volume}" />
+	</bean>
+
+	<bean id="musicPlayer6"
+		class="ru.alishev.springcourse.MusicPlayer" scope="prototype">
+		<property name="music" ref="musicBean" />
+		<property name="name" value="Classic" />
+		<property name="volume" value="50" />
+	</bean>
+
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
