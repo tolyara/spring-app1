@@ -17,10 +17,10 @@ public class DoubleMusicPlayer {
 		this.rockMusic = rockMusic;
 	}
 
-//	public void playMusic() {
-//		System.out.println("Playing: " + classicalMusic.getSong());
-//		System.out.println("Playing: " + rockMusic.getSong());
-//	}
+	public void playMusic() {
+		System.out.println("Playing: " + classicalMusic.getSong());
+		System.out.println("Playing: " + rockMusic.getSong());
+	}
 
 	public void playMusic(MusicGenre musicGenre) {
 		final Random random = new Random();

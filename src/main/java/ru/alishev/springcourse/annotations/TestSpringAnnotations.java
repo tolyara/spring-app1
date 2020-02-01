@@ -7,7 +7,7 @@ public class TestSpringAnnotations {
 
 	public static void main(String[] args) {
 
-		doLessonAutowired();
+		doLessonJavaCodeConfiguration();
 
 	}
 
@@ -85,17 +85,17 @@ public class TestSpringAnnotations {
 
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-//		ComputerMusicPlayer computerMusicPlayer = context.getBean("computerMusicPlayer", ComputerMusicPlayer.class);
-//		System.out.println(computerMusicPlayer.getName());
-//		System.out.println(computerMusicPlayer.getVolume());
+		ComputerMusicPlayer computerMusicPlayer = context.getBean("computerMusicPlayer", ComputerMusicPlayer.class);
+		System.out.println(computerMusicPlayer.getName());
+		System.out.println(computerMusicPlayer.getVolume());
 //
 //		ClassicalMusic classicalMusic = context.getBean("classicalMusic", ClassicalMusic.class);
 //		ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
 //		System.out.println(classicalMusic == classicalMusic2);
 		
 		//homework
-		MultigenreMusicPlayer multigenreMusicPlayer = context.getBean("multigenreMusicPlayer", MultigenreMusicPlayer.class);
-		System.out.println(multigenreMusicPlayer.playMusic());
+//		MultigenreMusicPlayer multigenreMusicPlayer = context.getBean("multigenreMusicPlayer", MultigenreMusicPlayer.class);
+//		System.out.println(multigenreMusicPlayer.playMusic());
 //		System.out.println(multigenreMusicPlayer.getName());
 //		System.out.println(multigenreMusicPlayer.getVolume());
 

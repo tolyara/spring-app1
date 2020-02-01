@@ -3,7 +3,9 @@ package ru.alishev.springcourse.annotations;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-//@Component
+import org.springframework.stereotype.Component;
+
+@Component
 //@Scope("prototype")
 public class ClassicalMusic implements Music {
 
@@ -16,7 +18,7 @@ public class ClassicalMusic implements Music {
 	
 	@PreDestroy
 	public void doMyDestroy() {
-		System.out.println("destroyClassicalMusic");
+		System.out.println("destroy ClassicalMusic");
 	}
 
 	@Override

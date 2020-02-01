@@ -1,5 +1,6 @@
 package ru.alishev.springcourse.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,7 @@ public class ComputerMusicPlayer {
 		return volume;
 	}
 
-//	@Autowired
+	@Autowired
 	public ComputerMusicPlayer(@Qualifier("rockMusic") Music music1, @Qualifier("classicalMusic") Music music2) {
 		this.music1 = music1;
 		this.music2 = music2;

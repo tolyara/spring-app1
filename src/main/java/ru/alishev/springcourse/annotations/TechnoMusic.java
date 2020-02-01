@@ -1,6 +1,8 @@
 package ru.alishev.springcourse.annotations;
 
-//@Component
+import org.springframework.stereotype.Component;
+
+@Component
 public class TechnoMusic implements Music {
 
 	String[] songs = { "techno song 1", "techno song 2", "techno song 3" };

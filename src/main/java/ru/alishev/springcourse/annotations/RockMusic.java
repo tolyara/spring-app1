@@ -1,6 +1,8 @@
 package ru.alishev.springcourse.annotations;
 
-//@Component
+import org.springframework.stereotype.Component;
+
+@Component
 //@Component("someRockMusic")
 public class RockMusic implements Music {
 

@@ -1,8 +1,9 @@
 package ru.alishev.springcourse.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class ClassicalMusicPlayer {
 	
 	private ClassicalMusic classicalMusic;

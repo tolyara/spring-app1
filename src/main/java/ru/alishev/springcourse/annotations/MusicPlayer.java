@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 //@Component
 public class MusicPlayer {
 
-	@Autowired
+//	@Autowired
 //	@Qualifier("classicalMusic")
 	private Music music;
 
-//	@Autowired
+	@Autowired
 	public MusicPlayer(Music music) {
 		this.music = music;
 	}
