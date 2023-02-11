@@ -9,8 +9,12 @@ public class Main {
 
         UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
         uniLibrary.getBook();
-        uniLibrary.returnMagazine();
-        uniLibrary.addBook();
+        uniLibrary.getMagazine();
+
+//        UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
+//        uniLibrary.getBook();
+//        uniLibrary.returnMagazine();
+//        uniLibrary.addBook();
 
 //        UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
 //        uniLibrary.getBook();

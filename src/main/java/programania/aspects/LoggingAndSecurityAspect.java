@@ -9,19 +9,20 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAndSecurityAspect {
 
-    @Pointcut("execution(* programania.UniLibrary.*(..))")
-    public void allMethodsFromUniLibrary() {}
+//    @Pointcut("execution(* programania.UniLibrary.*(..))")
+//    public void allMethodsFromUniLibrary() {}
+//
+//    @Pointcut("execution(* programania.UniLibrary.returnMagazine())")
+//    public void returnMagazineFromUniLibrary() {}
+//
+//    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
+//    public void allMethodsExceptReturnMagazineFromUniLibrary() {}
+//
+//    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
+//    public void beforeAllMethodsExceptReturnMagazineAdvice() {
+//        System.out.println("Logging #4");
+//    }
 
-    @Pointcut("execution(* programania.UniLibrary.returnMagazine())")
-    public void returnMagazineFromUniLibrary() {}
-
-    @Pointcut("allMethodsFromUniLibrary() && !returnMagazineFromUniLibrary()")
-    public void allMethodsExceptReturnMagazineFromUniLibrary() {}
-
-    @Before("allMethodsExceptReturnMagazineFromUniLibrary()")
-    public void beforeAllMethodsExceptReturnMagazineAdvice() {
-        System.out.println("Logging #4");
-    }
 
 
 //    @Pointcut("execution(* programania.UniLibrary.get*())")
