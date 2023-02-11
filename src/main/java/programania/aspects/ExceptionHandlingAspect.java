@@ -10,9 +10,14 @@ import org.springframework.stereotype.Component;
 @Order(300)
 public class ExceptionHandlingAspect {
 
-    @Before("programania.pointcuts.PointCut.allGetMethods()")
-    public void beforeGetExceptionHandlingAdvice() {
-        System.out.println("Handling exception of getting a book");
+    @Before("programania.pointcuts.PointCut.allAddMethods()")
+    public void beforeAddExceptionHandlingAdvice() {
+        System.out.println("Handling exception of adding a book");
     }
+
+//    @Before("programania.pointcuts.PointCut.allGetMethods()")
+//    public void beforeGetExceptionHandlingAdvice() {
+//        System.out.println("Handling exception of getting a book");
+//    }
 
 }

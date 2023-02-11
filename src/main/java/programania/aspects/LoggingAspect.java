@@ -10,9 +10,14 @@ import org.springframework.stereotype.Component;
 @Order(100)
 public class LoggingAspect {
 
-    @Before("programania.pointcuts.PointCut.allGetMethods()")
-    public void beforeGetLoggingAdvice() {
+    @Before("programania.pointcuts.PointCut.allAddMethods()")
+    public void beforeAddLoggingAdvice() {
         System.out.println("Logging of getting a book");
     }
+
+//    @Before("programania.pointcuts.PointCut.allGetMethods()")
+//    public void beforeGetLoggingAdvice() {
+//        System.out.println("Logging of getting a book");
+//    }
 
 }

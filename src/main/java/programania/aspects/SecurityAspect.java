@@ -10,9 +10,14 @@ import org.springframework.stereotype.Component;
 @Order(200)
 public class SecurityAspect {
 
-    @Before("programania.pointcuts.PointCut.allGetMethods()")
+    @Before("programania.pointcuts.PointCut.allAddMethods()")
     public void beforeGetSecurityAdvice() {
-        System.out.println("Security Check");
+        System.out.println("Security Check of adding a book");
     }
+
+//    @Before("programania.pointcuts.PointCut.allGetMethods()")
+//    public void beforeGetSecurityAdvice() {
+//        System.out.println("Security Check");
+//    }
 
 }
