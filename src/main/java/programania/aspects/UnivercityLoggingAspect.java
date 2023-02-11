@@ -8,6 +8,9 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import programania.entity.Book;
+import programania.entity.Student;
+
+import java.util.List;
 
 @Component
 @Aspect
@@ -19,8 +22,13 @@ public class UnivercityLoggingAspect {
         System.out.println("Logging of getStudents(), before");
     }
 
-    @AfterReturning("execution(* getStudents())")
-    public void afterGetStudentsLoggingAdvice() {
+    @AfterReturning(pointcut = "execution(* getStudents())", returning = "students")
+    public void afterGetStudentsLoggingAdvice(List<Student> students) {
+        for (Student student : students) {
+            student.setFullName("Mr. " + student.getFullName());
+            student.setAvgGrade(student.getAvgGrade() + 1);
+        }
+
         System.out.println("Logging of getStudents(), after");
     }
 
