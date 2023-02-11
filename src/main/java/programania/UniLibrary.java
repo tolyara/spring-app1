@@ -1,6 +1,7 @@
 package programania;
 
 import org.springframework.stereotype.Component;
+import programania.entity.Book;
 
 @Component
 public class UniLibrary {

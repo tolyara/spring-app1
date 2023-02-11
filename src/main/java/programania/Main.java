@@ -1,6 +1,7 @@
 package programania;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import programania.entity.Book;
 
 public class Main {
 
