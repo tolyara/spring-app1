@@ -26,5 +26,7 @@ public class Main {
 //        UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
 //        uniLibrary.getBook();
 //        uniLibrary.getMagazine();
+
+        context.close();
     }
 }
