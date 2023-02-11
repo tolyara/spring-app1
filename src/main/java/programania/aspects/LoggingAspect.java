@@ -1,7 +1,9 @@
 package programania.aspects;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +13,13 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
 
     @Before("programania.pointcuts.PointCut.allAddMethods()")
-    public void beforeAddLoggingAdvice() {
+    public void beforeAddLoggingAdvice(JoinPoint jp) {
+        MethodSignature methodSignature = (MethodSignature) jp.getSignature();
+        System.out.println("methodSignature = " + methodSignature);
+        System.out.println("getMethod = " + methodSignature.getMethod());
+        System.out.println("getReturnType = " + methodSignature.getReturnType());
+        System.out.println("getName = " + methodSignature.getName());
+
         System.out.println("Logging of getting a book");
     }
 

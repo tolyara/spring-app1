@@ -7,6 +7,7 @@ public class UniLibrary {
 
     public void getBook() {
         System.out.println("Getting a book");
+        printLine();
     }
 
     public void returnBook() {
@@ -24,7 +25,7 @@ public class UniLibrary {
         printLine();
     }
 
-    public void addBook() {
+    public void addBook(String librarian, Book book) {
         System.out.println("Adding a book");
         printLine();
     }

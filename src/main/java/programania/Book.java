@@ -1,7 +1,9 @@
 package programania;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Book {
 
     @Value("Book 1")
@@ -10,7 +12,7 @@ public class Book {
     @Value("Author 1")
     private String author;
 
-    @Value("Year 1")
+    @Value("1990")
     private int year;
 
     public String getName() {

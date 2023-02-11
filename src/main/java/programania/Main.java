@@ -8,8 +8,14 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 
         UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
+        Book book = context.getBean("book", Book.class);
         uniLibrary.getBook();
-        uniLibrary.getMagazine();
+        uniLibrary.addBook("Travis", book);
+        uniLibrary.addMagazine();
+
+//        UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
+//        uniLibrary.getBook();
+//        uniLibrary.getMagazine();
 
 //        UniLibrary uniLibrary = context.getBean("uniLibrary", UniLibrary.class);
 //        uniLibrary.getBook();
