@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-@Order(1)
+@Order(100)
 public class LoggingAspect {
 
     @Before("programania.pointcuts.PointCut.allGetMethods()")
