@@ -18,9 +18,12 @@ import java.util.List;
 @Order(100)
 public class UnivercityLoggingAspect {
 
-    @AfterThrowing("execution(* getStudents())")
-    public void afterGetStudentsLoggingAdvice() {
-        System.out.println("Logging an exception");
+    /**
+     * There's nothing we can do with an exception, it will be thrown in main method anyway
+     */
+    @AfterThrowing(pointcut = "execution(* getStudents())", throwing = "exception")
+    public void afterGetStudentsLoggingAdvice(Throwable exception) {
+        System.out.println("Logging an exception : " + exception);
     }
 
 //    @Before("execution(* getStudents())")
