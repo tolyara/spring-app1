@@ -2,6 +2,7 @@ package programania.aspects;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -17,19 +18,24 @@ import java.util.List;
 @Order(100)
 public class UnivercityLoggingAspect {
 
-    @Before("execution(* getStudents())")
-    public void beforeGetStudentsLoggingAdvice() {
-        System.out.println("Logging of getStudents(), before");
+    @AfterThrowing("execution(* getStudents())")
+    public void afterGetStudentsLoggingAdvice() {
+        System.out.println("Logging an exception");
     }
 
-    @AfterReturning(pointcut = "execution(* getStudents())", returning = "students")
-    public void afterGetStudentsLoggingAdvice(List<Student> students) {
-        for (Student student : students) {
-            student.setFullName("Mr. " + student.getFullName());
-            student.setAvgGrade(student.getAvgGrade() + 1);
-        }
-
-        System.out.println("Logging of getStudents(), after");
-    }
+//    @Before("execution(* getStudents())")
+//    public void beforeGetStudentsLoggingAdvice() {
+//        System.out.println("Logging of getStudents(), before");
+//    }
+//
+//    @AfterReturning(pointcut = "execution(* getStudents())", returning = "students")
+//    public void afterGetStudentsLoggingAdvice(List<Student> students) {
+//        for (Student student : students) {
+//            student.setFullName("Mr. " + student.getFullName());
+//            student.setAvgGrade(student.getAvgGrade() + 1);
+//        }
+//
+//        System.out.println("Logging of getStudents(), after");
+//    }
 
 }
