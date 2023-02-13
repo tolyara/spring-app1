@@ -11,9 +11,10 @@ public class UniLibrary {
         printLine();
     }
 
-    public void returnBook() {
+    public String returnBook() {
         System.out.println("Returning a book");
         printLine();
+        return "Book1";
     }
 
     public void getMagazine() {
