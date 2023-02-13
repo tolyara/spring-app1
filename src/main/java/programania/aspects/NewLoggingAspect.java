@@ -19,7 +19,7 @@ public class NewLoggingAspect {
             targetMethodResult = proceedingJoinPoint.proceed();
         } catch (Exception e) {
             System.out.println("Exception was occurred : " + e);
-            targetMethodResult = "Unknown";
+            throw e;
         }
         long end = System.currentTimeMillis();
 
