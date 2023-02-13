@@ -1,10 +1,7 @@
 package programania.aspects;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -18,13 +15,22 @@ import java.util.List;
 @Order(100)
 public class UnivercityLoggingAspect {
 
-    /**
-     * There's nothing we can do with an exception, it will be thrown in main method anyway
-     */
-    @AfterThrowing(pointcut = "execution(* getStudents())", throwing = "exception")
-    public void afterGetStudentsLoggingAdvice(Throwable exception) {
-        System.out.println("Logging an exception : " + exception);
+    @After("execution(* getStudents())")
+    public void afterGetStudentsLoggingAdvice() {
+        System.out.println("Logging finishing of getStudents() method ");
     }
+
+
+
+//    /**
+//     * There's nothing we can do with an exception, it will be thrown in main method anyway
+//     */
+//    @AfterThrowing(pointcut = "execution(* getStudents())", throwing = "exception")
+//    public void afterGetStudentsLoggingAdvice(Throwable exception) {
+//        System.out.println("Logging an exception : " + exception);
+//    }
+
+
 
 //    @Before("execution(* getStudents())")
 //    public void beforeGetStudentsLoggingAdvice() {
