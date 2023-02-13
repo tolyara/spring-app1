@@ -14,13 +14,34 @@ public class NewLoggingAspect {
         System.out.println("Around logging before returning a book");
 
         long begin = System.currentTimeMillis();
-        Object targetMethodResult = proceedingJoinPoint.proceed();
-//        Object targetMethodResult = "Book2";
+        Object targetMethodResult = null;
+        try {
+            targetMethodResult = proceedingJoinPoint.proceed();
+        } catch (Exception e) {
+            System.out.println("Exception was occurred : " + e);
+            targetMethodResult = "Unknown";
+        }
         long end = System.currentTimeMillis();
 
         System.out.println("Around logging after returning a book");
         System.out.println("Time of work " + (end - begin) + " millis");
         return targetMethodResult;
     }
+
+
+
+//    @Around("execution(public String returnBook())")
+//    public Object aroundReturnBookLoggingAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+//        System.out.println("Around logging before returning a book");
+//
+//        long begin = System.currentTimeMillis();
+//        Object targetMethodResult = proceedingJoinPoint.proceed();
+////        Object targetMethodResult = "Book2";
+//        long end = System.currentTimeMillis();
+//
+//        System.out.println("Around logging after returning a book");
+//        System.out.println("Time of work " + (end - begin) + " millis");
+//        return targetMethodResult;
+//    }
 
 }

@@ -12,6 +12,7 @@ public class UniLibrary {
     }
 
     public String returnBook() {
+        int i = 10/0;
         System.out.println("Returning a book");
         printLine();
         return "Book1";
