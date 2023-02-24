@@ -22,6 +22,11 @@ public class Main {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(TestConfig.class);
         SingletonBean bean2 = annotationConfigApplicationContext.getBean("annotationBean", SingletonBean.class);
         System.out.println(bean2.getValue());
+        System.out.println("-------------------------------------");
+
+        SingletonBean bean3 = annotationConfigApplicationContext.getBean("singletonBean", SingletonBean.class);
+        System.out.println(bean3.getValue());
+        System.out.println("-------------------------------------");
     }
 
 }

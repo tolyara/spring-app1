@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @Scope("singleton")
 public class SingletonBean {
 
-    @Value("${value1}")
-    private String value;
+//    @Value("${value1}")
+    private String value = "defaultValue";
 
     public String getValue() {
         return value;
